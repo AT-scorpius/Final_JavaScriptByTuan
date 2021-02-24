@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../Main Function/main.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Main Function/header/header-14.css">
+    <link rel="stylesheet" type="text/css" href="../../Main Function/header/style.css">
+
+<style>
+
+</style>
+</head>
+
+<body>
+    <!-- menu -->
+    <div class="header" id="header-content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="header-content">
+            <div class="container">
+                <div class="logo-shop">
+                    <a onclick="goToHome()" href="#">
+                        <div><img src="../../image/logo.png" /></div>
+                        <div><span>Ôm là yêu</span></div>
+                    </a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#" onclick="goToHome()">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Product</a>
+                        </li>
+                 <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown">
+                                Other
+                            </a>
+                            <div class="dropdown-content">
+                                <a class="dropdown-item" href="../../Service/dichvu-tintuc/dichvu.html">Service</a>
+                                <a class="dropdown-item" href="../../Service/dichvu-tintuc/tintuc.html">News</a>
+                                
+                              
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto">
+                        <div class="form-inline my-2 my-lg-0" id="set-search">
+                            <!-- search -->
+                            <!-- <input placeholder="search " type="text" id="search"> 
+                    <button onclick="search()">Search</button> -->
+                            <input class="form-control mr-sm-2" placeholder="Search" id="search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" id="button-search" onclick="search()">Search</button>
+
+                        </div>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        &nbsp;
+
+                        <li class="button-card">
+                            <a href="../cart.html" class="fas fa-shopping-cart" style="font-size: 100%; text-align: center;"><span>Cart</span></a>
+                        </li>
+
+                        <li class="button-account">
+                            <a href="../../Manage/Login/createAccount.html" > <i class="fa fa-user" style="color: orangered;padding-right: 5px;"></i>Manage Account</a>
+                        </li>
+                        <li class="button-log-out">
+                            <a href="../../HomePage/Home/TrangChu.html"onclick="logOut()" > <i class="fas fa-sign-out-alt" style="color: orangered;padding-right: 5px;"></i>Log Out</a>
+                        </li>
+                        &nbsp; &nbsp;&nbsp;
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- end menu -->
+    <!-- Search Function -->
+    <div class="container">
+        <div id="search-content" class="all-product" style="display: none;">
+            <div class="sort-search">
+                <div id="notice-search"></div>
+                <div id="show-search"></div>
+                <div class="page; page-search" id="page-search"></div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- End Search -->
+    <hr style="background-color: #e83e8c;height: 2px;">
+
+    <div class="container">
+        <div id="detail-product" style="display: none;">
+        </div>
+    </div>
+
+    <div id="home-page" style="display: block;">
+
+        <div class="content" style="display: block;">
+            <div id="carouselExampleIndicators" class="carousel slide mt-1" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="https://teddy.vn/wp-content/uploads/2020/07/baner-giao-hang-2_optimized.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://teddy.vn/wp-content/uploads/2020/07/banner-6-dich-vu-min.jpg" alt="Second slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://teddy.vn/wp-content/uploads/2020/12/Untitled-2-01.png" alt="Third slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <!-- end Slider -->
+
+            <hr style="background-color: #e83e8c;height: 2px;">
+            <!-- Phần của Tuấn -->
+            <div class="container">
+                <div class="all-product" id="product">
+                    <h2 class="title" id="title-All-Pr"><strong>All</strong> Products <span id="quantity"></span> </h2>
+                    <div id="notice"> </div>
+                    <div id="showAll" class=”row” style="display: block;">
+                    </div>
+                    <div class="page" id="page"> </div>
+
+                </div>
+
+                <div class="container">
+
+                    <div id="notice-dm">
+
+                    </div>
+                    <div id="show-DM">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Slider -->
+
+
+    <!-- Hiển thị tất cả trong div rỗng -->
+    <hr style="background-color: #e83e8c;height: 2px;">
+    <!-- Hết phần của Tuấn -->
+    <div class="container">
+        <div class="row mt-5" id="ref-product">
+            <h2 class="title"><strong>Hot Hit</strong> Products</h2>
+            <div class="list-product-subtitle">
+                <p>List product description</p>
+            </div>
+            <div class="product-group">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="https://teddy.vn/wp-content/uploads/2020/11/goi-trau-theu-hoa1-255x255.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Gối Trâu Thêu Hoa</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                                </p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="https://teddy.vn/wp-content/uploads/2020/10/bo-bong-om-banh-2-255x255.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Product</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                                </p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="https://teddy.vn/wp-content/uploads/2020/10/trau-bong-ao-sao-255x255.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Product</h5>
+                                </p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                        <div class="card card-product mb-3">
+                            <img class="card-img-top" src="https://teddy.vn/wp-content/uploads/2020/06/trau-mui-tim-9-copy-255x255.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Product</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                                </p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- end list product -->
+    <hr style="background-color: #e83e8c;height: 2px;">
+    <footer class="footer-section bg-with-black">
+        <div class="container-fluid justify-content-center">
+            <div class="row py-5">
+                <div class="col">
+                    <div class="card border-0">
+                        <div class="card-body text-center ">
+                            <h2><b style="color: rgb(226, 43, 144);">Let `s have a chat !</b></h2>
+                            <p class="pl-0 ml-0 mb-5">Find out what we can do for your crush.</p>
+                            <div class="row text-center justify-content-center">
+                                <div class="col-auto">
+                                    <div class="input-group-lg input-group mb-3"><input type="text" class="form-control" placeholder="Enter your e-mail address" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                        <div class="input-group-append"><button class="btn btn-success" type="button" id="button-addon2" style="background-color: rgb(206, 151, 176);"> <b>Submit</b></button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="mx-0 px-0" style="background-color: rgb(196, 184, 190); height: 2px;">
+            <footer>
+                <div class="row justify-content-around mb-0 pt-5 pb-0 ">
+                    <div class=" col-11">
+                        <div class="row justify-content-center">
+                            <div class="col-md-3 col-12 font-italic align-items-center mt-md-3 mt-4">
+                                <h5><span> <img src="home_img/logo.png" class="img-fluid mb-1" style="width: 50px;"></span><b style="color: rgb(221, 55, 133);"> Embrace Is Love</b></h5>
+                                <p class="social mt-md-3 mt-2"> <span><i class="fa fa-facebook " aria-hidden="true"></i></span> <span><i class="fa fa-linkedin" aria-hidden="true"></i></span> <span><i class="fa fa-twitter" aria-hidden="true"></i></span> </p> <small class="copy-rights cursor-pointer">&#9400; 2019 EasyGo Digital Technologies</small><br><small>Copyright.All Rights Resered. </small>
+                            </div>
+                            <div class="col-md-3 col-12 my-sm-0 mt-5">
+                                <ul class="list-unstyled">
+                                    <li class="mt-md-3 mt-4">ONLINE TRANSFER</li>
+                                    <li>Vietcombank</li>
+                                    <li>Account number: 001100415732</li>
+                                    <li>Account holder: Tran Thi Nhu Mai</li>
+                                    <li>See more another accounts</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-12 my-sm-0 mt-5">
+                                <ul class="list-unstyled">
+                                    <li class="mt-md-3 mt-4">YOUR NEED</li>
+                                    <li>Intergrated Security Platform</li>
+                                    <li>Core Features</li>
+                                    <li>Product Features</li>
+                                    <li>Pricing</li>
+                                </ul>
+                            </div>
+                            <div class="col-xl-auto col-md-3 col-12 my-sm-0 mt-5">
+                                <ul class="list-unstyled">
+                                    <li class="mt-md-3 mt-4">OFFER</li>
+                                    <li>Intergrated Security Platform</li>
+                                    <li>Core Features</li>
+                                    <li>Product Features</li>
+                                    <li>Pricing</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </footer>
+
+    </div>
+
+    <!-- Load jquery trước khi load bootstrap js -->
+    <script src="../../Main Function/offlineData.js"></script>
+    <script src="./User.js"></script>
+    <script src="../../bootstrap/jquery-3.3.1.min.js"></script>
+    <script>
+        !localStorage.getItem("listProduct") && save(preData)
+        
+        var data = load();
+        var page = getCurrentPage();
+        var isSearch = getIsSearch();
+        console.log("current page " + page);
+        displayData(data, page, isSearch);
+        displayData(preData, page, false);
+        var user=JSON.parse(localStorage.getItem('User'));
+        console.log("Khách Hàng đang đăng nhập: "+user.email);
+        DM();
+
+    </script>
+    
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

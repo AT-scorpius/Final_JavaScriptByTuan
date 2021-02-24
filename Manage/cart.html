@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="product.js">
+    </script>
+    <link rel="stylesheet" href="cart.css">
+    <style>
+     .btn btn-primary btn-lg:hover {
+    background-color: blue;
+}
+
+th {
+    border-radius: 10px;
+    background-color: #FFC0CB;
+    font-size: larger;
+}
+
+tr {
+    font-size: larger;
+    text-align: center;
+    font-family: monospace;
+}
+
+#money {
+    font-size: larger;
+    color: red;
+}
+    </style>
+</head>
+
+<body></body>
+
+<div class="col-12">
+      
+<div class="table-responsive">
+    <table class="table table-hover table-condensed" id="dataTable" width="80%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Img</th>
+                <th>Price</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody id="tab1">
+
+        </tbody>
+        <tfoot>
+
+            <tr style=" text-align: right;">
+                <td colspan="4">Subtotal</td>
+                <td colspan="2" id="sub"></td>
+            </tr>
+            <tr style=" text-align:right;">
+                <td colspan="4">Shipping</td>
+                <td colspan="2" id="money_ship"></td>
+            </tr>
+            <tr style=" text-align: right; background-color: #AFEEEE;">
+                <td colspan="4">Grand Total</td>
+                <td colspan="2" id="money"></td>
+            </tr>
+            <tr style=" text-align:center;">
+                <td colspan="3"> <button type="button" class="btn btn-warning btn-lg" onclick="quayLai();">Continue Shopping</button></td>
+                <td colspan="3"><button type="button" class="btn btn-primary btn-lg" onclick="buyProduct('+i+')" data-toggle="modal" data-target="#updateProduct">Checkout</button></td>
+
+            </tr>
+            <script>
+                function quayLai() {
+                    location.assign("User/User.html");
+                }
+            </script>
+        </tfoot>
+
+    </table>
+</div>
+
+    <div class="modal fade" id="updateProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">ORDERING - DELIVERY</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" class="form-row">
+                        <div class="oder" style=" background-color: yellow; height: 100px; width: 300px; border-radius: 4px; margin-left: 50px; text-align: center;">
+                            <table style=" margin: 10px;">
+
+                                <tr style=" margin: 10px;">
+                                    <td>Subtotal: </td>
+                                    <td id="subt"></td>
+                                </tr>
+                                <tr>
+                                    <td>transportation fee: </td>
+                                    <td id="money_shipt"></td>
+                                </tr>
+                                <tr style="color:red">
+                                    <td>Grand Total: </td>
+                                    <td id="moneyt"></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label>full name</label>
+                            <input class="form-control" type="text" id="name" placeholder="Buyer's full name">
+                        </div>
+                      
+                        <div class="col-12 mt-3">
+                            <label>Your phone number</label>
+                            <input class="form-control" type="text" id="number" placeholder="Please enter your phone number">
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label for="">Your address</label>
+                            <input class="form-control" type="text" id="address" placeholder="Delivery address">
+                        </div>
+                        <div class="col-12 mt-3">
+                            <button type="button" class="btn btn-primary btn-lg btn-block">Confirm buy product</button>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="User/User.js"></script>
+<script>
+    showCard();
+</script>
+</body>
+
+</html>

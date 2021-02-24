@@ -1,0 +1,86 @@
+// // GIỎ HÀNG
+// var card = [];
+
+// function saveListCard() {
+//     localStorage.setItem('ListCard', JSON.stringify(card));
+// }
+
+
+// function loadListCard() {
+//     card = JSON.parse(localStorage.getItem('ListCard'));
+// }
+
+// if (localStorage.getItem('ListCard') != null) {
+//     loadListCard();
+// }
+
+// function getListCard() {
+//     return JSON.parse(window.localStorage.getItem('ListCard'));
+// }
+// // localStorage.setItem('ListCard', JSON.stringify(card));
+
+// function setListCard(card) {
+//     localStorage.setItem('ListCard', JSON.stringify(card));
+// }
+
+// if (localStorage.getItem('ListCard') != null) {
+//     getListCard();
+// }
+
+// function Mua() {
+//     for (var key2 in product) {
+//         if (key2 == vitri) {
+//             var data = JSON.parse(JSON.stringify(product[key2]));
+//             card.push(data);
+//             console.log(data);
+//             console.log(key2);
+//         }
+//         saveListCard();
+//     }
+// }
+
+// function Card() {
+
+//     console.log(card);
+//     for (var key in card) {
+//         let html = "";
+
+//         var data = card[key];
+//         console.log(data);
+//         html += `
+//     <tr>
+//         <td>${data.ID}</td>
+//         <td>${data.name}</td>
+//         <td> <img src="${data.img}" alt="" style="width:100px;height:100px"></td>
+//         <td> ${data.price}</td>       
+//         <td>   <button  onclick="deleteProduct('+key+')" class="btn btn-out-warning"> <i class="fas fa-trash"> </i></button></td>
+//         <td><input type="number" value="${data.amount}" onclick="count('${data.ID}')"> </td>
+//     </tr>`;
+
+//         document.getElementById("tab1").innerHTML += html;
+
+//     }
+// }
+
+// function count(id) {
+//     card.forEach(value => {
+//         if (value.id == id) {
+//             value.id;///lỗi ở đây
+//         }
+//     })
+
+// }
+
+// var deleteProduct = function (i) {
+//     card.splice(i, 1);
+//     localStorage.setItem('ListCard', JSON.stringify(card));
+//     window.location.reload();
+
+// }
+// var buyProduct = function (i) {
+//     var k = infor[i];
+//     document.getElementById("ten").value = k.name;
+//     document.getElementById("named").value = k.name;
+//     document.getElementById("num").value = k.number;
+//     document.getElementById("add").value = k.address;;
+// }

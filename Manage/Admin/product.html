@@ -1,0 +1,209 @@
+<html>
+
+<head>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
+        <!-- <meta name="description" content="" />
+        <meta name="author" content="" /> -->
+        <title>Product</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- <link href="product.html" rel="stylesheet"> -->
+        <script src="product.js"></script>
+<style>
+    table, th {
+        border: 1px solid rgb(43, 41, 41);
+        background-color: rgb(235, 219, 219);
+        text-align: center;
+        align-content: center;
+    }
+</style>
+    </head>
+
+    <body>
+
+        <div id="layoutSidenav_content">
+            <div class="product">
+                <h2 style="text-align: center; color: rgb(224, 73, 99); text-align: center;">Product Management</div>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    <i class=" fas fa-plus mr-2"></i>Create
+                </button>
+            <table class="table">
+                <thead class="thead-light text-center">
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Image 1</th>
+                        <th>Image 2</th>
+                        <th>Image 3</th>
+                        <th>Size 1</th>
+                        <th>Size 2</th>
+                        <th>Size 3</th>
+                        <th>Price 1</th>
+                        <th>Price 2</th>
+                        <th>Price 3</th>
+                        <th>Status</th>
+                        <th>Comment 1</th>
+                        <th>Comment 2</th>
+                        <th>Comment 3</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center" id="product-admin">
+
+                </tbody>
+            </table>
+        </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLable1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span  aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" class="form-row">
+                            <!-- <div class="col-12">
+                            <input class="form-control" type="text" id="id" placehoder="Id">
+                        </div> -->
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="type" placeholder="Enter Type">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="name" placeholder="Enter Name">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="img" placeholder="Enter link 1">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="img2" placeholder="Enter link 2">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="img3" placeholder="Enter link 3">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="size1" placeholder="Enter size 1">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="size2" placeholder="Enter size 2">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="size3" placeholder="Enter size 3">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="number" id="price" placeholder="Price 1">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="number" id="price2" placeholder="Price 2">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="number" id="price3" placeholder="Price 3">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="status" placeholder="Status">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="comment" placeholder="Comment 1">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="comment2" placeholder="Comment 2">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="comment3" placeholder="Comment 3">
+                            </div>
+                            <button class="btn btn-outline-danger mt-3" href="" onclick="push_data()">Add product</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--modal Update-->
+        <div class="modal fade" id="updateProduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalLable1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span  aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" class="form-row">
+                            <!-- <div class="col-12">
+                            <input class="form-control" type="text" id="id" placehoder="id">
+                        </div> -->
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="typed" placeholder="Enter Type">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="named" placeholder="Enter Name">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="imgd" placeholder="Enter link 1">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="imgd2" placeholder="Enter link 2">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="imgd3" placeholder="Enter link 3">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="sized1" placeholder="Enter size 1">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="sized2" placeholder="Enter size 2">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="sized3" placeholder="Enter size 3">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="number" id="priced" placeholder="Price 1">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="number" id="priced2" placeholder="Price 2">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="number" id="priced3" placeholder="Price 3">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="statusd" placeholder="Status">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="commentd" placeholder="Comment 1">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="commentd2" placeholder="Comment 2">
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input class="form-control" type="text" id="commentd3" placeholder="Comment 3">
+                            </div>
+                            <button class="btn btn-outline-danger mt-3" href="" onclick="updateProduct()">Update product</button>
+                        </form>
+                        <div id="UpdateProduct"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
+                    </div>
+                </div>
+            </div>
+    </body>
+
+</html>

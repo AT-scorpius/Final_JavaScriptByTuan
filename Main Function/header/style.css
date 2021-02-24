@@ -1,0 +1,97 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.header{
+	align-content: center;
+	padding: 20px;
+}
+#header-content{
+	padding: 20px;
+/*xử lý menu*/
+}
+.logo-shop{
+	align-items: center;
+	text-align: center;
+	display: grid;
+	grid: auto auto;	
+	padding: 10px;
+}
+a{
+	text-decoration: none;
+	color: #f7544a;
+}
+a:hover{
+	text-decoration: none;
+	color: rgb(31, 31, 248);
+}
+.logo-shop img{
+	margin-right: 0px;
+    width: 80%;
+	height: auto;
+	padding-right: 0px;
+}
+#button-search{
+	background: #f7544a;
+    color: #fff;
+}
+#button-search:hover{
+	color:  #f7544a;
+	border: solid 1px  #f7544a;
+	background-color: #fff;
+}
+.logo-shop a{
+    display: inline;
+}
+
+#set-search{
+	padding-top: 10px;
+	padding-left: 20px;
+}
+.dropdown{
+	position: relative;
+	display: inline-block;
+}
+.dropdown-content{
+	display: none;
+	position: absolute;
+	z-index: 1;
+	background-color: #f5f5f5;
+}
+.dropdown:hover .dropdown-content{
+	display: block;
+}
+/*list product*/
+.list-product-title{
+	width: 100%;
+	text-transform: uppercase;
+	margin-left: 5px;
+	margin-right: 5px;
+
+}
+.list-product-subtitle{
+	width: 100%;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+/*product card*/
+.card-product{
+	width: 100%;
+	margin-left: 5px;
+	margin-right: 5px;
+	overflow: hidden;	
+}
+
+/* page  */
+.page{
+	float: left;
+}
+
+.buttonPage{
+	background-color: #f5f5f5;
+}
+.collapse .navbar-collapse{
+	align-content: center;
+}
+
