@@ -1,7 +1,4 @@
-
-
-const preUser = [
-    {
+const preUser = [{
         code: "User-1",
         fullname: "Tran Thi Nhu Mai",
         firstname: "Tran",
@@ -55,7 +52,10 @@ const preUser = [
     }
 ]
 
-
+function toJson(arr) {
+    array = JSON.stringify(arr);
+    console.log(array);
+}
 // Sản phẩm mẫu
 const preData = [{
         ID: "1",

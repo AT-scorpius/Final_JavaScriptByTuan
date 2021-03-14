@@ -15,9 +15,9 @@
     <link rel="stylesheet" type="text/css" href="../../Main Function/header/header-14.css">
     <link rel="stylesheet" type="text/css" href="../../Main Function/header/style.css">
 
-<style>
+    <style>
 
-</style>
+    </style>
 </head>
 
 <body>
@@ -44,15 +44,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Product</a>
                         </li>
-                 <li class="nav-item dropdown">
+                        <li class="nav-item dropdown">
                             <a class="nav-link" href="#" id="navbarDropdown">
                                 Other
                             </a>
                             <div class="dropdown-content">
                                 <a class="dropdown-item" href="../../Service/dichvu-tintuc/dichvu.html">Service</a>
                                 <a class="dropdown-item" href="../../Service/dichvu-tintuc/tintuc.html">News</a>
-                                
-                              
+
+
                             </div>
                         </li>
                     </ul>
@@ -75,10 +75,10 @@
                         </li>
 
                         <li class="button-account">
-                            <a href="../../Manage/Login/createAccount.html" > <i class="fa fa-user" style="color: orangered;padding-right: 5px;"></i>Manage Account</a>
+                            <a href="../../Manage/Login/createAccount.html"> <i class="fa fa-user" style="color: orangered;padding-right: 5px;"></i>Manage Account</a>
                         </li>
                         <li class="button-log-out">
-                            <a href="../../HomePage/Home/TrangChu.html"onclick="logOut()" > <i class="fas fa-sign-out-alt" style="color: orangered;padding-right: 5px;"></i>Log Out</a>
+                            <a href="../../HomePage/Home/TrangChu.html" onclick="logOut()"> <i class="fas fa-sign-out-alt" style="color: orangered;padding-right: 5px;"></i>Log Out</a>
                         </li>
                         &nbsp; &nbsp;&nbsp;
                     </ul>
@@ -299,19 +299,17 @@
     <script src="../../bootstrap/jquery-3.3.1.min.js"></script>
     <script>
         !localStorage.getItem("listProduct") && save(preData)
-        
         var data = load();
         var page = getCurrentPage();
         var isSearch = getIsSearch();
         console.log("current page " + page);
         displayData(data, page, isSearch);
         displayData(preData, page, false);
-        var user=JSON.parse(localStorage.getItem('User'));
-        console.log("Khách Hàng đang đăng nhập: "+user.email);
+        var user = JSON.parse(localStorage.getItem('User'));
+        console.log("Khách Hàng đang đăng nhập: " + user.email);
         DM();
-
     </script>
-    
+
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

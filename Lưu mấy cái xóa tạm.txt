@@ -84,3 +84,39 @@
 //     document.getElementById("num").value = k.number;
 //     document.getElementById("add").value = k.address;;
 // }
+
+
+API
+// export default preData;
+// const API_URL = "https://600a505e778d1a001779399b.mockapi.io/api/";
+
+// function callAPI(endpoint, method, body) {
+//     return axios({
+//         method: method,
+//         url: `${API_URL}/${endpoint}`,
+//         data: body,
+//     }).catch((err) => {
+//         console.log(err);
+//     });
+// }
+// getUserFromAPI=()=>{
+//     localStorage.clear('listUserAPI');
+//     var arrUser=[];
+//     loadFromAPI();
+//     if(arrUser==null){
+//         alert('Không có dữ liệu từ API');
+//     }else{
+//         localStorage.setItem('listUserAPI',arrUser);
+//     }
+// }
+// function loadFromAPI() {
+//     for (var i in preUser)
+//         callAPI("User", "POST", preUser[i]).then((response) => {
+
+//         });
+//     callAPI("User", "GET", null).then((res) => {
+//         arrUser = res.data;
+//         console.log(arrUser);
+//         // showUser();
+//     });
+// }

@@ -1,24 +1,27 @@
 const DATA_ON_PAGE = 4;
 
+
 function pushID(id) {
     localStorage.setItem('listID', JSON.stringify(id));
     console.log(id);
-}
+}//Đẩy id sp vào local storage
 
 function loadID() {
     return JSON.parse(localStorage.getItem('listID'));
-}
+}//lấy id sản phẩm từ local storage
+
 
 function save(preData) {
     localStorage.setItem('listProduct', JSON.stringify(preData));
-}
+}//Lưu sản phẩm vào lacal storage
+
 function saveCurrentPage(page) {
     localStorage.setItem('currentPage', JSON.stringify(page));
-}
+}//lưu trang hiện tại cho hàm phân trang
 
 function getCurrentPage() {
     return localStorage.getItem("currentPage") ? localStorage.getItem("currentPage") : 1
-}
+}//lấy số trang hiện tại nếu ko có mặc định trang 1
 
 function setIsSearch(isSearch) {
     localStorage.setItem('isSearch', JSON.stringify(isSearch));
@@ -27,21 +30,20 @@ function setIsSearch(isSearch) {
 
 function getIsSearch(isSearch) {
     return localStorage.getItem("isSearch") ? JSON.parse(localStorage.getItem("isSearch")) : false
-}
+}//hàm kiểm tra search
 
 function load() {
-    console.log("Ham load dc chay");
     return JSON.parse(localStorage.getItem('listProduct'));
-}
+}//Lấy sản phẩm trong local storage
 
- function reLoad() {
+function reLoad() {
     window.location.reload()
     localStorage.removeItem('listSearch');
 }
 
 function gotoLogin() {
     window.location.href = "../../Manage/Login/login.html";
-}
+}// Tới trang đăng nhập
 
 function goToHome() {
     localStorage.removeItem("listProduct")
@@ -52,8 +54,10 @@ function goToHome() {
     document.getElementById("detail-product").style.display = "none";
     document.getElementById("search-content").style.display = "none";
     document.getElementById("home-page").style.display = "block";
-}
+}//Quay lại trang chủ
 
+
+//Các hàm hiển thị sản phẩm
 function filterType() {
     // Dữ liệu này có thể lấy từ API <> preData là dữ liệu mẫu
     let product = preData;
@@ -115,26 +119,26 @@ function DM() {
 
 //search
 function search() {
-    
+
     var key = document.getElementById("search").value;
     console.log(key);
 
     let product = preData
     var listSearch = [];
-    if(key!=''||key!=null||key!=false){
+    if (key != '' || key != null || key != false) {
         for (let i = 0; i < product.length; i++) {
             console.log(product[i].name);
             if (product[i].name.toLowerCase().search(key) >= 0) {
-                console.log("found"+product[i]);
+                console.log("found" + product[i]);
                 listSearch.push(product[i]);
             }
         }
         save(listSearch)
-    } 
+    }
     // Hàm này lưu chuỗi vào listProduct localStorage=> Dữ liệu động <> nên bên trên lấy dữ liệu mẫu preData
     saveCurrentPage(1)
     setIsSearch(true)
-    
+
     reLoad();
 }
 
@@ -143,7 +147,6 @@ const displayData = (data, page = 1, isSearch = false, numDataOfPage = DATA_ON_P
     var last = (first + numDataOfPage - 1 < data.length) ? first + numDataOfPage : data.length;
     var listproductDisplay = " ";
     for (var i = first; i < last; i++) {
-        console.log(data[i].ID);
         listproductDisplay += '<div class= "col-md-3 col-xs-6 col-sm-6">';
         listproductDisplay += '<div class="products">';
         listproductDisplay += '<a onclick="pushID(' + data[i].ID + ');Chitiet()" href="#detail-product">';
@@ -177,7 +180,7 @@ const displayData = (data, page = 1, isSearch = false, numDataOfPage = DATA_ON_P
         document.getElementById("show-search").innerHTML = listproductDisplay
         //div num page
         document.getElementById("page-search").innerHTML = pageItemShow
-        
+
     } else {
         //div notice
         document.getElementById("quantity").innerHTML = "(" + data.length + ")";
@@ -343,91 +346,4 @@ function Chitiet() {
     document.getElementById('detail-product').innerHTML = html;
     load();
     console.log('print detail');
-}
-
-// GIỎ HÀNG
-var card = [];
-
-function saveListCard() {
-    localStorage.setItem('ListCard', JSON.stringify(card));
-}
-
-
-function loadListCard() {
-    card = JSON.parse(localStorage.getItem('ListCard'));
-}
-
-if (localStorage.getItem('ListCard') != null) {
-    loadListCard();
-}
-
-function getListCard() {
-    return JSON.parse(window.localStorage.getItem('ListCard'));
-}
-// localStorage.setItem('ListCard', JSON.stringify(card));
-
-function setListCard(card) {
-    localStorage.setItem('ListCard', JSON.stringify(card));
-}
-
-if (localStorage.getItem('ListCard') != null) {
-    getListCard();
-}
-
-function Mua() {
-    for (var key2 in product) {
-        if (key2 == vitri) {
-            var data = JSON.parse(JSON.stringify(product[key2]));
-            card.push(data);
-            console.log(data);
-            console.log(key2);
-        }
-        saveListCard();
-    }
-}
-
-function Card() {
-
-    console.log(card);
-    for (var key in card) {
-        let html = "";
-
-        var data = card[key];
-        console.log(data);
-        html += `
-    <tr>
-        <td>${data.ID}</td>
-        <td>${data.name}</td>
-        <td> <img src="${data.img}" alt="" style="width:100px;height:100px"></td>
-        <td> ${data.price}</td>       
-        <td>   <button  onclick="deleteProduct('+key+')" class="btn btn-out-warning"> <i class="fas fa-trash"> </i></button></td>
-        <td><input type="number" value="${data.amount}" onclick="count('${data.ID}')"> </td>
-    </tr>`;
-
-        document.getElementById("tab1").innerHTML += html;
-
-    }
-}
-
-function count(id) {
-    card.forEach(value => {
-        if (value.id == id) {
-            value.id;///lỗi ở đây
-        }
-    })
-
-}
-
-var deleteProduct = function (i) {
-    card.splice(i, 1);
-    localStorage.setItem('ListCard', JSON.stringify(card));
-    window.location.reload();
-
-}
-var buyProduct = function (i) {
-    var k = infor[i];
-    document.getElementById("ten").value = k.name;
-    document.getElementById("named").value = k.name;
-    document.getElementById("num").value = k.number;
-    document.getElementById("add").value = k.address;;
 }

@@ -8,8 +8,9 @@
     },
     "devDependencies": {},
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "npm --watch db.json"
+        "start": "json-server --watch db.json"
+
+
     },
     "author": "",
     "license": "ISC"

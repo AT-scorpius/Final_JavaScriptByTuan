@@ -1,7 +1,5 @@
 const DATA_ON_PAGE = 4;
-saveUser=(object)=>{
-    localStorage.setItem('User',object);
-}
+
 // Hàm Đăng Xuất
 logOut=()=>{
     localStorage.clear('User');
@@ -76,9 +74,9 @@ function DM() {
     // Dữ liệu này có thể lấy từ API <> preData là dữ liệu mẫu
     let product = preData;
     type = filterType();
-    console.log("runnn");
+   
     var notice = "";
-    console.log("runnn");
+    
     for (t = 0; t < type.length; t++) {
         var noticeDM = '<div id="notice-DM-' + t + '"></div>';
         document.getElementById("show-DM").innerHTML += noticeDM;
@@ -124,7 +122,7 @@ function search() {
 
     var key = document.getElementById("search").value;
     console.log(key);
-    let product = preData
+    let product = preData//Dữ liệu mẫu
     
 if(key!=''){
     var listSearch = [];
@@ -149,7 +147,7 @@ const displayData = (data, page = 1, isSearch = false, numDataOfPage = DATA_ON_P
     var last = (first + numDataOfPage - 1 < data.length) ? first + numDataOfPage : data.length;
     var listproductDisplay = " ";
     for (var i = first; i < last; i++) {
-        console.log(data[i].ID);
+      
         listproductDisplay += '<div class= "col-md-3 col-xs-6 col-sm-6">';
         listproductDisplay += '<div class="products">';
         listproductDisplay += '<a onclick="pushID(' + data[i].ID + ');Chitiet()" href="#detail-product">';
@@ -221,8 +219,6 @@ const DMtest = () => {
     }
     localStorage.setItem('listType', JSON.stringify(arrCagorite));
     console.log(arrCagorite);
-
-
 }
 // Chi tiết sản phẩm
 function Chitiet() {

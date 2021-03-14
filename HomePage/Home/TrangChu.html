@@ -315,16 +315,13 @@
     <script src="../../bootstrap/jquery-3.3.1.min.js"></script>
     <script>
       
-       !localStorage.getItem("listUserAPI") &&  getUserFromAPI(preData)
         !localStorage.getItem("listProduct") && save(preData)
-        console.log("start1");
         var data = load()
         var page = getCurrentPage()
         var isSearch = getIsSearch()
         console.log("current page " + page)
         displayData(data, page, isSearch)
         displayData(preData, page, false)
-        console.log("start end");
         DM();
     
     </script>
