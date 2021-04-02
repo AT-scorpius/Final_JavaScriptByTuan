@@ -9,6 +9,7 @@ User:
 - Thanh toán + Nạp Tiền, 
 - Sửa tài khoản (VD: tên, số điện thoại, mật khẩu,...),
 - Xem lịch sử giao dịch.
+- Gửi Mail mã xác nhận khi đăng kí tài khoản
 
 Giỏ hàng:
  - Tính tiền (Phí vận chuyển 5% đơn hàng trước giảm giá, ..) 
